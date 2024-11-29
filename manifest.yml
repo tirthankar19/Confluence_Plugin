@@ -1,0 +1,22 @@
+modules:
+  confluence:globalPage:
+    - key: confluence-plugin-app-hello-world-global-page
+      resource: main
+      render: native
+      resolver:
+        function: resolver
+      title: Confluence Plugin App
+      route: hello-world
+  function:
+    - key: resolver
+      handler: index.handler
+resources:
+  - key: main
+    path: src/frontend/index.jsx
+app:
+  runtime:
+    name: nodejs20.x
+  id: ari:cloud:ecosystem::app/8fcc4ba2-7996-4f01-a655-d4e01637f8a7
+permissions:
+  scopes:
+    - read:confluence-user
